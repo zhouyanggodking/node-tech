@@ -1,0 +1,24 @@
+{
+  "name": "node-tech",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhouyanggodking/node-tech.git"
+  },
+  "author": "godking",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zhouyanggodking/node-tech/issues"
+  },
+  "homepage": "https://github.com/zhouyanggodking/node-tech#readme",
+  "dependencies": {
+    "koa": "^2.5.2",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0"
+  }
+}
