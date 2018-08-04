@@ -31,7 +31,7 @@ function processRouting(router, mapping) {
 const init = (controllerDir) => {
   const router = require('koa-router')();
   addControlllers(router, controllerDir);
-  console.log(router.routes());
+  // console.log(router.routes());
   return router.routes();
 }
 
