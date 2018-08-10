@@ -25,24 +25,33 @@ sequelize.authenticate()
 const User = sequelize.define('user', {
   id: {
     type: Sequelize.INTEGER,
-    primaryKey: true
+    primaryKey: true,
+    autoIncrement: true
+  },
+  userName: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    unique: true
   },
   name: {
-    type: Sequelize.STRING
+    type: Sequelize.INTEGER,
+    allowNull: false
   },
-  age: {
-    type: Sequelize.INTEGER
-  },
-  title: {
-    type: Sequelize.STRING
+  email: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    unique: true
   }
-}, {
-  timestamps: false,
-  createdAt: false,
-  updatedAt: false,
-  deletedAt: false
+});
+
+sequelize.query('select * from users', {
+  model: User
+}).then(users => {
+  console.log(users)
 })
 
-User.findAll().then(users =>{
+sequelize.query("insert into Users(UserName, Name, Email, Password) values('godking1', 'godking1', 'godking1@hotmail.com', 'king1')").then(users => {
   console.log(users)
+}, err => {
+  console.log(err)
 })
