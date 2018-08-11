@@ -1,3 +1,5 @@
+// auto processing all controller files in constrollers folder
+
 const fs = require('fs');
 const path = require('path');
 function addControlllers(router, dir = 'controllers') {
@@ -20,7 +22,11 @@ function processRouting(router, mapping) {
     }
     else if (url.startsWith('POST ')) {
       const path = url.substring(5);
+      // url - handler
       router.post(path, mapping[url]);
+    } else if (url.startsWith('DELETE ')) {
+      const path = url.substring(7);
+      router.delete(url, mapping[url]);
     }
     else {
       console.log('only support GET and POST requests');

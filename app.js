@@ -10,3 +10,5 @@ app.use(bodyParser());
 app.use(controllers());
 
 app.listen(8000);
+
+console.log('listening at port 8000')
